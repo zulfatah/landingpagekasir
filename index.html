@@ -1,209 +1,1470 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
-  <!-- BASIC SEO -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>Kasir Pintar - Aplikasi Kasir Android Terbaik untuk UMKM | POS Digital Modern</title>
-
-  <meta name="description" content="Kasir Pintar adalah aplikasi kasir Android terbaik untuk UMKM, toko retail, dan bisnis kecil. Kelola stok, transaksi, dan laporan penjualan otomatis dalam satu sistem POS modern.">
-  <meta name="keywords" content="aplikasi kasir, aplikasi kasir android, aplikasi kasir gratis, aplikasi POS, kasir digital, aplikasi kasir UMKM, software kasir toko, kasir pintar">
-
+  <title>Kasir Pintar — Aplikasi Kasir Android Terbaik untuk UMKM</title>
+  <meta name="description" content="Kasir Pintar adalah aplikasi kasir Android terbaik untuk UMKM, toko retail, dan bisnis kecil. Kelola stok, transaksi, dan laporan penjualan otomatis.">
+  <meta name="keywords" content="aplikasi kasir, aplikasi kasir android, aplikasi kasir gratis, aplikasi POS, kasir digital, aplikasi kasir UMKM">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="http://api.com/">
-
-  <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Kasir Pintar - Aplikasi Kasir Android Terbaik untuk UMKM">
+  <link rel="canonical" href="https://kasirpintar.id/">
+  <meta property="og:title" content="Kasir Pintar — Aplikasi Kasir Android Terbaik untuk UMKM">
   <meta property="og:description" content="Kelola bisnis lebih cepat dengan aplikasi kasir modern. Stok otomatis, laporan real-time, dan multi kasir.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://api.com/">
-  <meta property="og:image" content="http://api.com/preview.jpg">
-
-  <!-- TWITTER CARD -->
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- PERFORMANCE -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- SCHEMA ORG (SEO BOOST GOOGLE RICH RESULT) -->
+  <meta property="og:url" content="https://kasirpintar.id/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Kasir Pintar",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Android",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "IDR"
-    },
-    "description": "Aplikasi kasir Android untuk UMKM, toko retail, dan bisnis kecil dengan fitur POS modern, laporan otomatis, dan manajemen stok."
-  }
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Kasir Pintar","applicationCategory":"BusinessApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"IDR"},"description":"Aplikasi kasir Android untuk UMKM dengan fitur POS modern, laporan otomatis, dan manajemen stok."}
   </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --emerald: #0EA46A;
+      --emerald-dark: #0B7D51;
+      --emerald-light: #E6F9F1;
+      --emerald-mid: #D1F5E6;
+      --slate: #0F172A;
+      --slate-mid: #334155;
+      --slate-light: #64748B;
+      --muted: #F8FAFC;
+      --border: #E2E8F0;
+      --white: #FFFFFF;
+      --amber: #F59E0B;
+      --blue: #3B82F6;
+      --purple: #8B5CF6;
+      --coral: #F97316;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--slate);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ───── NAV ───── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--slate);
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: var(--emerald);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon i { color: white; font-size: 20px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--slate-mid);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--emerald); }
+    .nav-cta {
+      background: var(--emerald);
+      color: white !important;
+      padding: 9px 20px;
+      border-radius: 10px;
+      font-weight: 600 !important;
+      font-size: 14px;
+      text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--emerald-dark) !important; transform: translateY(-1px); }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+
+    /* ───── HERO ───── */
+    .hero {
+      background: var(--white);
+      padding: 100px 24px 80px;
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--emerald-light);
+      color: var(--emerald-dark);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .hero-badge i { font-size: 14px; }
+    h1 {
+      font-size: clamp(36px, 5vw, 54px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      color: var(--slate);
+    }
+    h1 .accent { color: var(--emerald); }
+    .hero-sub {
+      margin-top: 18px;
+      font-size: 17px;
+      color: var(--slate-light);
+      line-height: 1.7;
+      max-width: 480px;
+    }
+    .hero-actions {
+      margin-top: 36px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--emerald);
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(14,164,106,0.3);
+    }
+    .btn-primary:hover {
+      background: var(--emerald-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(14,164,106,0.4);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--slate);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+      border: 1.5px solid var(--border);
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--emerald);
+      background: var(--emerald-light);
+      transform: translateY(-2px);
+    }
+    .hero-trust {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .avatar-stack {
+      display: flex;
+    }
+    .avatar-stack .av {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 2px solid white;
+      margin-left: -8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: white;
+    }
+    .av:first-child { margin-left: 0; }
+    .trust-text { font-size: 13px; color: var(--slate-light); }
+    .trust-text strong { color: var(--slate); font-weight: 600; }
+
+    /* ───── PHONE ILLUSTRATION ───── */
+    .phone-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .phone-glow {
+      position: absolute;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(14,164,106,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .phone-svg-wrap {
+      position: relative;
+      z-index: 2;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    /* ───── FLOATING CARDS ───── */
+    .float-card {
+      position: absolute;
+      background: white;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      z-index: 3;
+      animation: floatCard 4s ease-in-out infinite;
+    }
+    .float-card-1 {
+      top: 10%;
+      left: -10%;
+      animation-delay: 0s;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .float-card-2 {
+      bottom: 20%;
+      right: -12%;
+      animation-delay: 1.5s;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .float-card-3 {
+      bottom: 40%;
+      left: -15%;
+      animation-delay: 0.8s;
+    }
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .float-icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .float-icon i { font-size: 16px; color: white; }
+    .fc-label { color: var(--slate-light); font-weight: 400; font-size: 11px; }
+    .fc-value { color: var(--slate); font-size: 13px; font-weight: 700; }
+
+    /* ───── STATS STRIP ───── */
+    .stats-strip {
+      background: var(--slate);
+      padding: 48px 24px;
+    }
+    .stats-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--emerald);
+      letter-spacing: -1px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 4px;
+    }
+
+    /* ───── SECTION SHARED ───── */
+    section { padding: 96px 24px; }
+    .section-inner { max-width: 1160px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--emerald);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      color: var(--slate);
+    }
+    .section-sub {
+      margin-top: 14px;
+      font-size: 16px;
+      color: var(--slate-light);
+      max-width: 540px;
+      line-height: 1.7;
+    }
+    .section-header-center {
+      text-align: center;
+    }
+    .section-header-center .section-sub {
+      margin: 14px auto 0;
+    }
+
+    /* ───── FEATURES ───── */
+    #fitur { background: var(--muted); }
+    .features-grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .feat-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    }
+    .feat-card:hover {
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+      border-color: var(--emerald);
+    }
+    .feat-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .feat-icon i { font-size: 24px; }
+    .feat-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--slate);
+      margin-bottom: 8px;
+    }
+    .feat-desc {
+      font-size: 14px;
+      color: var(--slate-light);
+      line-height: 1.65;
+    }
+    .feat-card.featured {
+      background: var(--emerald);
+      border-color: var(--emerald);
+    }
+    .feat-card.featured .feat-title { color: white; }
+    .feat-card.featured .feat-desc { color: rgba(255,255,255,0.8); }
+    .feat-card.featured .feat-icon { background: rgba(255,255,255,0.2); }
+    .feat-card.featured .feat-icon i { color: white; }
+
+    /* ───── HOW IT WORKS ───── */
+    #cara-kerja { background: var(--white); }
+    .steps-grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .steps-grid::after {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: calc(16.66% + 24px);
+      right: calc(16.66% + 24px);
+      height: 2px;
+      background: var(--emerald-mid);
+      z-index: 0;
+    }
+    .step-item {
+      text-align: center;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--emerald-light);
+      border: 4px solid var(--white);
+      margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .step-num i { font-size: 28px; color: var(--emerald); }
+    .step-badge {
+      position: absolute;
+      top: -6px; right: -6px;
+      width: 22px; height: 22px;
+      background: var(--emerald);
+      border-radius: 50%;
+      border: 2px solid white;
+      font-size: 10px;
+      font-weight: 800;
+      color: white;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--slate);
+      margin-bottom: 8px;
+    }
+    .step-desc {
+      font-size: 14px;
+      color: var(--slate-light);
+      line-height: 1.65;
+    }
+
+    /* ───── DEMO / DASHBOARD MOCKUP ───── */
+    #demo { background: var(--slate); padding: 96px 24px; }
+    #demo h2, #demo .section-eyebrow { color: white; }
+    #demo .section-sub { color: #94A3B8; }
+    .dashboard-mock {
+      margin-top: 60px;
+      background: #1E293B;
+      border-radius: 20px;
+      border: 1px solid #334155;
+      overflow: hidden;
+    }
+    .mock-topbar {
+      background: #0F172A;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #1E293B;
+    }
+    .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mock-title { color: #64748B; font-size: 13px; margin-left: 8px; }
+    .mock-body { padding: 24px; }
+    .mock-kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .mock-kpi {
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .mock-kpi-label { font-size: 11px; color: #64748B; margin-bottom: 6px; }
+    .mock-kpi-val { font-size: 20px; font-weight: 700; color: white; }
+    .mock-kpi-delta { font-size: 11px; color: #0EA46A; margin-top: 4px; }
+    .mock-row2 {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 12px;
+    }
+    .mock-chart-area {
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .mock-chart-label { font-size: 12px; color: #64748B; margin-bottom: 12px; }
+    .mock-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+      height: 80px;
+    }
+    .mock-bar {
+      flex: 1;
+      border-radius: 4px 4px 0 0;
+      background: #0EA46A;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    .mock-bar.active { opacity: 1; }
+    .mock-bar.dim { opacity: 0.3; }
+    .mock-list-area {
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .mock-list-label { font-size: 12px; color: #64748B; margin-bottom: 12px; }
+    .mock-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #0F172A;
+    }
+    .mock-item:last-child { border-bottom: none; }
+    .mock-item-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .mock-item-icon i { font-size: 14px; }
+    .mock-item-name { flex: 1; font-size: 12px; color: #CBD5E1; }
+    .mock-item-val { font-size: 12px; font-weight: 600; color: white; }
+
+    /* ───── TESTIMONIALS ───── */
+    #testimoni { background: var(--muted); }
+    .testi-grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .testi-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .stars { display: flex; gap: 3px; }
+    .stars i { color: var(--amber); font-size: 16px; }
+    .testi-text { font-size: 15px; color: var(--slate-mid); line-height: 1.7; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-av {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: white;
+    }
+    .testi-name { font-size: 14px; font-weight: 700; color: var(--slate); }
+    .testi-role { font-size: 12px; color: var(--slate-light); }
+
+    /* ───── PRICING ───── */
+    #harga { background: var(--white); }
+    .pricing-grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .price-card {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 28px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .price-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.07); transform: translateY(-4px); }
+    .price-card.popular {
+      background: var(--emerald);
+      border-color: var(--emerald);
+    }
+    .price-badge {
+      display: inline-block;
+      background: var(--emerald-light);
+      color: var(--emerald-dark);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .price-card.popular .price-badge { background: rgba(255,255,255,0.25); color: white; }
+    .price-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--slate);
+      margin-bottom: 8px;
+    }
+    .price-card.popular .price-name { color: white; }
+    .price-num {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--slate);
+      letter-spacing: -1.5px;
+      line-height: 1;
+    }
+    .price-card.popular .price-num { color: white; }
+    .price-period {
+      font-size: 13px;
+      color: var(--slate-light);
+      margin-bottom: 24px;
+      margin-top: 4px;
+    }
+    .price-card.popular .price-period { color: rgba(255,255,255,0.7); }
+    .price-feats { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .price-feats li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: var(--slate-mid);
+    }
+    .price-card.popular .price-feats li { color: rgba(255,255,255,0.9); }
+    .price-feats i { color: var(--emerald); font-size: 16px; }
+    .price-card.popular .price-feats i { color: rgba(255,255,255,0.9); }
+    .price-btn {
+      display: block;
+      text-align: center;
+      padding: 13px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .price-btn-outline {
+      border: 1.5px solid var(--border);
+      color: var(--slate);
+    }
+    .price-btn-outline:hover { border-color: var(--emerald); background: var(--emerald-light); }
+    .price-btn-white {
+      background: white;
+      color: var(--emerald-dark);
+    }
+    .price-btn-white:hover { background: var(--emerald-light); }
+
+    /* ───── FAQ ───── */
+    #faq { background: var(--muted); }
+    .faq-grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--slate);
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    .faq-q:hover { background: var(--muted); }
+    .faq-q i { font-size: 18px; color: var(--slate-light); transition: transform 0.25s; flex-shrink: 0; }
+    .faq-item.open .faq-q i { transform: rotate(45deg); color: var(--emerald); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s;
+      padding: 0 24px;
+      font-size: 14px;
+      color: var(--slate-light);
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding-bottom: 20px; }
+
+    /* ───── CTA BANNER ───── */
+    #cta { background: var(--white); }
+    .cta-box {
+      background: var(--emerald);
+      border-radius: 24px;
+      padding: 72px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-deco {
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+    .cta-deco-1 { top: -100px; left: -60px; }
+    .cta-deco-2 { bottom: -120px; right: -40px; }
+    .cta-box h2 { color: white; font-size: 40px; position: relative; }
+    .cta-box p { color: rgba(255,255,255,0.8); margin-top: 14px; font-size: 17px; position: relative; }
+    .cta-actions { margin-top: 40px; display: flex; gap: 12px; justify-content: center; position: relative; flex-wrap: wrap; }
+    .btn-cta-white {
+      background: white;
+      color: var(--emerald-dark);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 15px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-cta-white:hover { background: var(--emerald-light); transform: translateY(-2px); }
+    .btn-cta-ghost {
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 15px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+      border: 2px solid rgba(255,255,255,0.4);
+      transition: all 0.2s;
+    }
+    .btn-cta-ghost:hover { background: rgba(255,255,255,0.12); border-color: white; }
+
+    /* ───── FOOTER ───── */
+    footer {
+      background: var(--slate);
+      color: #94A3B8;
+      padding: 64px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand { }
+    .footer-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 18px; color: white;
+      text-decoration: none; margin-bottom: 14px;
+    }
+    .footer-logo-icon {
+      width: 34px; height: 34px;
+      background: var(--emerald);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .footer-logo-icon i { color: white; font-size: 18px; }
+    .footer-desc { font-size: 14px; line-height: 1.7; }
+    .footer-socials { display: flex; gap: 8px; margin-top: 20px; }
+    .footer-social {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: #1E293B;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .footer-social:hover { background: var(--emerald); }
+    .footer-social i { color: #94A3B8; font-size: 16px; }
+    .footer-social:hover i { color: white; }
+    .footer-col-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { font-size: 14px; color: #94A3B8; text-decoration: none; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--emerald); }
+    .footer-bottom {
+      border-top: 1px solid #1E293B;
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    /* ───── SCROLL ANIMATIONS ───── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ───── MOBILE ───── */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; gap: 48px; padding: 64px 24px; }
+      .phone-wrap { order: -1; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+      .steps-grid::after { display: none; }
+      .mock-kpi-row { grid-template-columns: 1fr 1fr; }
+      .mock-row2 { grid-template-columns: 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .stats-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .cta-box { padding: 48px 28px; }
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+    }
+    @media (max-width: 600px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      h2 { font-size: 28px; }
+    }
+
+    /* ───── MOBILE NAV OPEN ───── */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: white;
+      z-index: 200;
+      flex-direction: column;
+      padding: 24px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav-close { align-self: flex-end; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--slate); }
+    .mobile-nav ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 32px; }
+    .mobile-nav ul a { font-size: 20px; font-weight: 600; color: var(--slate); text-decoration: none; display: block; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .mobile-nav .nav-cta { margin-top: 24px; justify-content: center; font-size: 16px; padding: 16px; }
+  </style>
 </head>
+<body>
 
-<body class="bg-white text-gray-900">
+<!-- ─── MOBILE NAV ─── -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Tutup menu"><i class="ti ti-x"></i></button>
+  <ul>
+    <li><a href="#fitur" onclick="closeMobileNav()">Fitur</a></li>
+    <li><a href="#cara-kerja" onclick="closeMobileNav()">Cara Kerja</a></li>
+    <li><a href="#harga" onclick="closeMobileNav()">Harga</a></li>
+    <li><a href="#testimoni" onclick="closeMobileNav()">Ulasan</a></li>
+    <li><a href="#faq" onclick="closeMobileNav()">FAQ</a></li>
+  </ul>
+  <a href="https://kasirpintar.id/download" class="nav-cta" style="margin-top: 24px; display: flex; justify-content: center;">
+    <i class="ti ti-download"></i> Download Gratis
+  </a>
+</div>
 
-<!-- HERO SEO OPTIMIZED -->
-<header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white">
-  <div class="max-w-6xl mx-auto px-6 py-24 text-center">
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <div class="logo-icon"><i class="ti ti-cash-register"></i></div>
+      Kasir Pintar
+    </a>
+    <ul class="nav-links">
+      <li><a href="#fitur">Fitur</a></li>
+      <li><a href="#cara-kerja">Cara Kerja</a></li>
+      <li><a href="#harga">Harga</a></li>
+      <li><a href="#testimoni">Ulasan</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="https://kasirpintar.id/download" class="nav-cta">
+      <i class="ti ti-brand-google-play"></i> Download Gratis
+    </a>
+    <button class="hamburger" onclick="openMobileNav()" aria-label="Buka menu">
+      <i class="ti ti-menu-2" style="font-size: 24px; color: var(--slate);"></i>
+    </button>
+  </div>
+</nav>
 
-    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
-      Aplikasi Kasir Android Terbaik untuk UMKM & Toko Modern
-    </h1>
-
-    <p class="mt-6 text-lg text-blue-100 max-w-3xl mx-auto">
-      <strong>Kasir Pintar</strong> adalah aplikasi POS digital untuk mengelola transaksi, stok barang, dan laporan penjualan secara otomatis.
-      Cocok untuk toko retail, warung, cafe, dan bisnis kecil-menengah.
-    </p>
-
-    <div class="mt-8 flex flex-col md:flex-row gap-4 justify-center">
-      <a href="http://api.com/aplikasipintar.apk"
-         class="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-gray-100 transition">
-        Download Aplikasi Kasir APK
-      </a>
-
-      <a href="#fitur"
-         class="border border-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-700 transition">
-        Lihat Fitur Lengkap
-      </a>
+<!-- ─── HERO ─── -->
+<header>
+  <div class="hero">
+    <!-- Left -->
+    <div>
+      <div class="hero-badge">
+        <i class="ti ti-award"></i>
+        #1 Aplikasi Kasir Android di Indonesia
+      </div>
+      <h1>
+        Kasir Digital <span class="accent">Cerdas</span> untuk Bisnis Anda
+      </h1>
+      <p class="hero-sub">
+        Kelola transaksi, stok barang, dan laporan penjualan dalam satu aplikasi POS modern. Gratis, mudah, dan bisa offline.
+      </p>
+      <div class="hero-actions">
+        <a href="https://kasirpintar.id/download" class="btn-primary">
+          <i class="ti ti-brand-android"></i> Download APK Gratis
+        </a>
+        <a href="#fitur" class="btn-secondary">
+          <i class="ti ti-player-play"></i> Lihat Demo
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="avatar-stack">
+          <div class="av" style="background:#0EA46A;">AR</div>
+          <div class="av" style="background:#8B5CF6;">BW</div>
+          <div class="av" style="background:#F97316;">SK</div>
+          <div class="av" style="background:#3B82F6;">DN</div>
+        </div>
+        <span class="trust-text"><strong>50.000+</strong> pemilik usaha sudah bergabung</span>
+      </div>
     </div>
 
-    <p class="mt-6 text-sm text-blue-200">
-      Gratis coba & bisa digunakan offline
-    </p>
+    <!-- Right – phone illustration -->
+    <div class="phone-wrap">
+      <div class="phone-glow"></div>
 
+      <!-- Floating cards -->
+      <div class="float-card float-card-1">
+        <div class="float-icon" style="background:#0EA46A;"><i class="ti ti-trending-up"></i></div>
+        <div>
+          <div class="fc-label">Omset Hari Ini</div>
+          <div class="fc-value">Rp 4.280.000</div>
+        </div>
+      </div>
+      <div class="float-card float-card-2">
+        <div class="float-icon" style="background:#8B5CF6;"><i class="ti ti-box"></i></div>
+        <div>
+          <div class="fc-label">Stok Tersedia</div>
+          <div class="fc-value">1.247 item</div>
+        </div>
+      </div>
+      <div class="float-card float-card-3" style="display:flex;align-items:center;gap:8px;">
+        <i class="ti ti-circle-check" style="color:#0EA46A;font-size:20px;"></i>
+        <span style="color:#334155;font-size:13px;font-weight:600;">Transaksi berhasil!</span>
+      </div>
+
+      <!-- Phone SVG -->
+      <div class="phone-svg-wrap">
+        <svg width="260" height="500" viewBox="0 0 260 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Phone body -->
+          <rect x="10" y="10" width="240" height="480" rx="36" fill="#0F172A"/>
+          <rect x="14" y="14" width="232" height="472" rx="33" fill="#1E293B"/>
+          <!-- Screen -->
+          <rect x="20" y="20" width="220" height="460" rx="28" fill="#0F172A"/>
+          <!-- Notch -->
+          <rect x="90" y="22" width="80" height="22" rx="11" fill="#1E293B"/>
+          <!-- Status bar -->
+          <rect x="34" y="56" width="60" height="6" rx="3" fill="#334155"/>
+          <rect x="192" y="56" width="34" height="6" rx="3" fill="#334155"/>
+          <!-- App header -->
+          <rect x="20" y="72" width="220" height="48" fill="#0EA46A"/>
+          <rect x="36" y="82" width="80" height="10" rx="3" fill="rgba(255,255,255,0.9)"/>
+          <rect x="36" y="96" width="52" height="7" rx="2" fill="rgba(255,255,255,0.5)"/>
+          <rect x="188" y="84" width="32" height="28" rx="8" fill="rgba(255,255,255,0.2)"/>
+          <!-- KPI row -->
+          <rect x="28" y="132" width="98" height="62" rx="10" fill="#1E293B"/>
+          <rect x="134" y="132" width="98" height="62" rx="10" fill="#1E293B"/>
+          <rect x="40" y="145" width="44" height="6" rx="2" fill="#334155"/>
+          <rect x="40" y="156" width="64" height="9" rx="2" fill="white"/>
+          <rect x="40" y="170" width="30" height="5" rx="2" fill="#0EA46A"/>
+          <rect x="146" y="145" width="44" height="6" rx="2" fill="#334155"/>
+          <rect x="146" y="156" width="54" height="9" rx="2" fill="white"/>
+          <rect x="146" y="170" width="38" height="5" rx="2" fill="#F59E0B"/>
+          <!-- Chart area -->
+          <rect x="28" y="206" width="204" height="100" rx="10" fill="#1E293B"/>
+          <rect x="40" y="216" width="70" height="6" rx="2" fill="#334155"/>
+          <!-- Bar chart -->
+          <rect x="44" y="274" width="16" height="24" rx="3" fill="#0EA46A" opacity="0.5"/>
+          <rect x="66" y="260" width="16" height="38" rx="3" fill="#0EA46A" opacity="0.7"/>
+          <rect x="88" y="250" width="16" height="48" rx="3" fill="#0EA46A"/>
+          <rect x="110" y="268" width="16" height="30" rx="3" fill="#0EA46A" opacity="0.6"/>
+          <rect x="132" y="255" width="16" height="43" rx="3" fill="#0EA46A" opacity="0.8"/>
+          <rect x="154" y="263" width="16" height="35" rx="3" fill="#0EA46A" opacity="0.65"/>
+          <rect x="176" y="245" width="16" height="53" rx="3" fill="#0EA46A"/>
+          <rect x="198" y="270" width="16" height="28" rx="3" fill="#0EA46A" opacity="0.4"/>
+          <!-- Transaction list -->
+          <rect x="28" y="318" width="204" height="148" rx="10" fill="#1E293B"/>
+          <rect x="40" y="328" width="80" height="6" rx="2" fill="#334155"/>
+          <!-- Items -->
+          <rect x="40" y="346" width="26" height="26" rx="7" fill="#0EA46A" opacity="0.2"/>
+          <rect x="73" y="350" width="80" height="5" rx="2" fill="#475569"/>
+          <rect x="73" y="360" width="48" height="4" rx="2" fill="#334155"/>
+          <rect x="185" y="350" width="36" height="6" rx="2" fill="white"/>
+          <rect x="40" y="382" width="26" height="26" rx="7" fill="#8B5CF6" opacity="0.2"/>
+          <rect x="73" y="386" width="70" height="5" rx="2" fill="#475569"/>
+          <rect x="73" y="396" width="40" height="4" rx="2" fill="#334155"/>
+          <rect x="185" y="386" width="30" height="6" rx="2" fill="white"/>
+          <rect x="40" y="418" width="26" height="26" rx="7" fill="#F97316" opacity="0.2"/>
+          <rect x="73" y="422" width="90" height="5" rx="2" fill="#475569"/>
+          <rect x="73" y="432" width="56" height="4" rx="2" fill="#334155"/>
+          <rect x="185" y="422" width="40" height="6" rx="2" fill="white"/>
+          <!-- Bottom nav -->
+          <rect x="20" y="456" width="220" height="44" fill="#1E293B"/>
+          <rect x="54" y="466" width="20" height="20" rx="5" fill="#0EA46A" opacity="0.3"/>
+          <rect x="100" y="466" width="20" height="20" rx="5" fill="#334155"/>
+          <rect x="146" y="466" width="20" height="20" rx="5" fill="#334155"/>
+          <rect x="192" y="466" width="20" height="20" rx="5" fill="#334155"/>
+          <!-- Home button area -->
+          <rect x="105" y="484" width="50" height="4" rx="2" fill="#334155"/>
+        </svg>
+      </div>
+    </div>
   </div>
 </header>
 
-<!-- SEO KEYWORD SECTION -->
-<section class="py-16 max-w-5xl mx-auto px-6">
-  <h2 class="text-3xl font-bold text-center">
-    Solusi Aplikasi Kasir Digital untuk Semua Jenis Usaha
-  </h2>
+<!-- ─── STATS ─── -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="reveal">
+      <div class="stat-num">50K+</div>
+      <div class="stat-label">Pengguna Aktif</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-num">Rp 2T+</div>
+      <div class="stat-label">Total Transaksi Diproses</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-num">4.9★</div>
+      <div class="stat-label">Rating di Play Store</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-num">99.9%</div>
+      <div class="stat-label">Uptime Server</div>
+    </div>
+  </div>
+</div>
 
-  <p class="mt-6 text-gray-600 text-center">
-    Kasir Pintar membantu UMKM menggunakan sistem kasir modern berbasis Android.
-    Dengan aplikasi ini, Anda tidak perlu lagi mencatat manual atau menghitung stok secara manual.
-  </p>
-</section>
+<!-- ─── FEATURES ─── -->
+<section id="fitur">
+  <div class="section-inner">
+    <div class="section-header-center reveal">
+      <div class="section-eyebrow">Fitur Unggulan</div>
+      <h2>Semua yang Anda butuhkan<br>dalam satu aplikasi</h2>
+      <p class="section-sub">Dirancang khusus untuk UMKM Indonesia — simple, cepat, dan andal bahkan tanpa internet.</p>
+    </div>
 
-<!-- FEATURES -->
-<section id="fitur" class="py-20 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-
-    <h2 class="text-3xl font-bold">
-      Fitur Aplikasi Kasir Pintar
-    </h2>
-
-    <p class="text-gray-600 mt-2">
-      Semua fitur penting dalam satu aplikasi POS modern
-    </p>
-
-    <div class="grid md:grid-cols-3 gap-6 mt-10">
-
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="font-bold">Kasir Cepat & Mudah</h3>
-        <p class="text-gray-600 text-sm mt-2">Transaksi hanya dalam beberapa detik.</p>
+    <div class="features-grid">
+      <div class="feat-card featured reveal">
+        <div class="feat-icon"><i class="ti ti-bolt" style="color:white;"></i></div>
+        <div class="feat-title">Kasir Cepat & Mudah</div>
+        <div class="feat-desc">Proses transaksi hanya 3 langkah. Scan barcode, pilih produk, terima pembayaran — selesai dalam detik.</div>
       </div>
-
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="font-bold">Manajemen Stok Barang</h3>
-        <p class="text-gray-600 text-sm mt-2">Stok otomatis terupdate real-time.</p>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#EDE9FE;"><i class="ti ti-package" style="color:#8B5CF6;"></i></div>
+        <div class="feat-title">Manajemen Stok Otomatis</div>
+        <div class="feat-desc">Stok berkurang otomatis setiap transaksi. Dapatkan notifikasi saat stok hampir habis.</div>
       </div>
-
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="font-bold">Laporan Penjualan Otomatis</h3>
-        <p class="text-gray-600 text-sm mt-2">Laporan harian, mingguan, bulanan.</p>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#FEF3C7;"><i class="ti ti-chart-bar" style="color:#F59E0B;"></i></div>
+        <div class="feat-title">Laporan Real-Time</div>
+        <div class="feat-desc">Laporan harian, mingguan, bulanan. Analisis produk terlaris dan waktu puncak penjualan.</div>
       </div>
-
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="font-bold">Multi Kasir</h3>
-        <p class="text-gray-600 text-sm mt-2">Bisa digunakan banyak karyawan.</p>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#EFF6FF;"><i class="ti ti-users" style="color:#3B82F6;"></i></div>
+        <div class="feat-title">Multi Kasir & Karyawan</div>
+        <div class="feat-desc">Daftarkan banyak kasir dengan hak akses berbeda. Pantau performa tiap karyawan.</div>
       </div>
-
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="font-bold">Offline Mode</h3>
-        <p class="text-gray-600 text-sm mt-2">Tetap berjalan tanpa internet.</p>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#FFF7ED;"><i class="ti ti-wifi-off" style="color:#F97316;"></i></div>
+        <div class="feat-title">Mode Offline</div>
+        <div class="feat-desc">Transaksi tetap berjalan meski sinyal hilang. Data tersinkron otomatis saat online kembali.</div>
       </div>
-
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="font-bold">Cloud Sync</h3>
-        <p class="text-gray-600 text-sm mt-2">Data aman tersimpan di cloud.</p>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#F0FDF4;"><i class="ti ti-cloud" style="color:#22C55E;"></i></div>
+        <div class="feat-title">Cloud Backup</div>
+        <div class="feat-desc">Data aman tersimpan di cloud. Ganti HP tanpa kehilangan satu pun data transaksi.</div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- BENEFIT SEO -->
-<section class="py-20 max-w-6xl mx-auto px-6">
-  <h2 class="text-3xl font-bold text-center">
-    Kenapa Harus Pakai Aplikasi Kasir Digital?
-  </h2>
-
-  <div class="grid md:grid-cols-2 gap-6 mt-10 text-gray-700">
-    <p>✔ Mengurangi kesalahan pencatatan manual</p>
-    <p>✔ Mempercepat proses transaksi pelanggan</p>
-    <p>✔ Memudahkan kontrol stok barang</p>
-    <p>✔ Meningkatkan efisiensi bisnis</p>
-    <p>✔ Cocok untuk UMKM dan toko retail</p>
-    <p>✔ Bisa digunakan di Android tanpa ribet</p>
+<!-- ─── HOW IT WORKS ─── -->
+<section id="cara-kerja">
+  <div class="section-inner">
+    <div class="section-header-center reveal">
+      <div class="section-eyebrow">Cara Kerja</div>
+      <h2>Mulai dalam 3 langkah mudah</h2>
+      <p class="section-sub">Tidak perlu pelatihan khusus. Siapapun bisa langsung pakai.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item reveal">
+        <div class="step-num">
+          <i class="ti ti-download"></i>
+          <div class="step-badge">1</div>
+        </div>
+        <div class="step-title">Download & Instal</div>
+        <div class="step-desc">Unduh APK gratis, instal di Android Anda. Tidak perlu spesifikasi tinggi — ringan dan cepat.</div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">
+          <i class="ti ti-settings"></i>
+          <div class="step-badge">2</div>
+        </div>
+        <div class="step-title">Input Produk & Harga</div>
+        <div class="step-desc">Tambahkan produk, harga, dan stok awal. Bisa import dari Excel jika sudah punya data.</div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">
+          <i class="ti ti-rocket"></i>
+          <div class="step-badge">3</div>
+        </div>
+        <div class="step-title">Mulai Berjualan!</div>
+        <div class="step-desc">Kasir siap digunakan. Terima pembayaran tunai, QRIS, atau transfer langsung dari aplikasi.</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CTA SEO -->
-<section class="bg-blue-700 text-white py-20 text-center">
-
-  <h2 class="text-3xl md:text-4xl font-bold">
-    Download Aplikasi Kasir Android Sekarang
-  </h2>
-
-  <p class="mt-4 text-blue-100">
-    Tingkatkan efisiensi bisnis Anda mulai hari ini dengan Kasir Pintar
-  </p>
-
-  <a href="http://api.com/aplikasipintar.apk"
-     class="mt-8 inline-block bg-white text-blue-700 font-bold px-10 py-4 rounded-xl shadow-lg">
-    Download APK Gratis
-  </a>
-
-</section>
-
-<!-- FAQ SEO -->
-<section class="py-20 max-w-4xl mx-auto px-6">
-
-  <h2 class="text-3xl font-bold text-center">FAQ Aplikasi Kasir Pintar</h2>
-
-  <div class="mt-8 space-y-6">
-
-    <div>
-      <h3 class="font-bold">Apa itu aplikasi Kasir Pintar?</h3>
-      <p class="text-gray-600">Kasir Pintar adalah aplikasi POS Android untuk membantu UMKM mengelola transaksi, stok, dan laporan penjualan.</p>
+<!-- ─── DASHBOARD DEMO ─── -->
+<section id="demo">
+  <div class="section-inner">
+    <div class="section-header-center reveal">
+      <div class="section-eyebrow" style="color:#0EA46A;">Dashboard Langsung</div>
+      <h2>Pantau bisnis dari mana saja</h2>
+      <p class="section-sub" style="color:#94A3B8;">Semua data penjualan tersaji rapi dan real-time. Tidak perlu buka laptop.</p>
     </div>
-
-    <div>
-      <h3 class="font-bold">Apakah bisa digunakan offline?</h3>
-      <p class="text-gray-600">Ya, aplikasi ini bisa digunakan tanpa internet.</p>
+    <div class="dashboard-mock reveal">
+      <div class="mock-topbar">
+        <div class="mock-dot" style="background:#EF4444;"></div>
+        <div class="mock-dot" style="background:#F59E0B;"></div>
+        <div class="mock-dot" style="background:#22C55E;"></div>
+        <span class="mock-title">kasirpintar.id — Dashboard Penjualan</span>
+      </div>
+      <div class="mock-body">
+        <div class="mock-kpi-row">
+          <div class="mock-kpi">
+            <div class="mock-kpi-label">Omset Hari Ini</div>
+            <div class="mock-kpi-val">Rp 4,28 Jt</div>
+            <div class="mock-kpi-delta">↑ 12% dari kemarin</div>
+          </div>
+          <div class="mock-kpi">
+            <div class="mock-kpi-label">Transaksi</div>
+            <div class="mock-kpi-val">87 kali</div>
+            <div class="mock-kpi-delta">↑ 8% dari kemarin</div>
+          </div>
+          <div class="mock-kpi">
+            <div class="mock-kpi-label">Produk Terjual</div>
+            <div class="mock-kpi-val">312 item</div>
+            <div class="mock-kpi-delta" style="color:#F59E0B;">→ Stabil</div>
+          </div>
+          <div class="mock-kpi">
+            <div class="mock-kpi-label">Stok Menipis</div>
+            <div class="mock-kpi-val" style="color:#EF4444;">3 produk</div>
+            <div class="mock-kpi-delta" style="color:#EF4444;">⚠ Perlu restock</div>
+          </div>
+        </div>
+        <div class="mock-row2">
+          <div class="mock-chart-area">
+            <div class="mock-chart-label">Penjualan 8 jam terakhir</div>
+            <div class="mock-bars">
+              <div class="mock-bar dim" style="height:30%;"></div>
+              <div class="mock-bar" style="height:48%;"></div>
+              <div class="mock-bar" style="height:62%;"></div>
+              <div class="mock-bar active" style="height:85%;"></div>
+              <div class="mock-bar" style="height:55%;"></div>
+              <div class="mock-bar" style="height:72%;"></div>
+              <div class="mock-bar active" style="height:100%;"></div>
+              <div class="mock-bar" style="height:65%;"></div>
+            </div>
+          </div>
+          <div class="mock-list-area">
+            <div class="mock-list-label">Produk Terlaris</div>
+            <div class="mock-item">
+              <div class="mock-item-icon" style="background:rgba(14,164,106,0.2);"><i class="ti ti-coffee" style="color:#0EA46A;"></i></div>
+              <div class="mock-item-name">Kopi Susu</div>
+              <div class="mock-item-val">×48</div>
+            </div>
+            <div class="mock-item">
+              <div class="mock-item-icon" style="background:rgba(139,92,246,0.2);"><i class="ti ti-bread" style="color:#8B5CF6;"></i></div>
+              <div class="mock-item-name">Roti Bakar</div>
+              <div class="mock-item-val">×31</div>
+            </div>
+            <div class="mock-item">
+              <div class="mock-item-icon" style="background:rgba(249,115,22,0.2);"><i class="ti ti-bottle" style="color:#F97316;"></i></div>
+              <div class="mock-item-name">Minuman Segar</div>
+              <div class="mock-item-val">×27</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <h3 class="font-bold">Apakah cocok untuk UMKM?</h3>
-      <p class="text-gray-600">Sangat cocok untuk toko kecil, warung, cafe, dan retail.</p>
-    </div>
-
   </div>
-
 </section>
 
-<!-- FOOTER SEO -->
-<footer class="py-10 text-center text-gray-500 text-sm border-t">
-  <p>© 2026 Kasir Pintar - Aplikasi Kasir Android untuk UMKM</p>
+<!-- ─── TESTIMONIALS ─── -->
+<section id="testimoni">
+  <div class="section-inner">
+    <div class="section-header-center reveal">
+      <div class="section-eyebrow">Ulasan Pengguna</div>
+      <h2>Dipercaya ribuan pemilik usaha</h2>
+      <p class="section-sub">Dari warung kecil hingga toko retail — Kasir Pintar hadir untuk semua.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></div>
+        <div class="testi-text">"Sejak pakai Kasir Pintar, pembukuan warung saya jadi rapi banget. Stok nggak pernah kehabisan mendadak lagi. Pokoknya recommended!"</div>
+        <div class="testi-author">
+          <div class="testi-av" style="background:#0EA46A;">AR</div>
+          <div>
+            <div class="testi-name">Andi Rahman</div>
+            <div class="testi-role">Pemilik Warung Makan, Surabaya</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></div>
+        <div class="testi-text">"Karyawan baru langsung bisa pakai tanpa pelatihan panjang. Laporannya juga detail, jadi saya bisa monitor dari mana saja."</div>
+        <div class="testi-author">
+          <div class="testi-av" style="background:#8B5CF6;">SW</div>
+          <div>
+            <div class="testi-name">Sinta Wulandari</div>
+            <div class="testi-role">Pemilik Toko Baju, Bandung</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-half-filled"></i></div>
+        <div class="testi-text">"Fitur offline-nya penyelamat banget. Pernah internet mati seharian, tapi transaksi tetap jalan normal. Luar biasa!"</div>
+        <div class="testi-author">
+          <div class="testi-av" style="background:#F97316;">BH</div>
+          <div>
+            <div class="testi-name">Budi Hartono</div>
+            <div class="testi-role">Pemilik Minimarket, Medan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section id="harga">
+  <div class="section-inner">
+    <div class="section-header-center reveal">
+      <div class="section-eyebrow">Paket Harga</div>
+      <h2>Mulai gratis, upgrade saat siap</h2>
+      <p class="section-sub">Tanpa biaya tersembunyi. Batalkan kapan saja.</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- Free -->
+      <div class="price-card reveal">
+        <div class="price-badge">Gratis Selamanya</div>
+        <div class="price-name">Starter</div>
+        <div class="price-num">Rp 0</div>
+        <div class="price-period">Tidak perlu kartu kredit</div>
+        <ul class="price-feats">
+          <li><i class="ti ti-check"></i> 1 Kasir</li>
+          <li><i class="ti ti-check"></i> Max 50 produk</li>
+          <li><i class="ti ti-check"></i> Laporan harian</li>
+          <li><i class="ti ti-check"></i> Mode offline</li>
+          <li><i class="ti ti-check"></i> Backup 7 hari</li>
+        </ul>
+        <a href="https://kasirpintar.id/download" class="price-btn price-btn-outline">Download Gratis</a>
+      </div>
+      <!-- Pro -->
+      <div class="price-card popular reveal">
+        <div class="price-badge">Paling Populer</div>
+        <div class="price-name">Pro</div>
+        <div class="price-num">Rp 99K</div>
+        <div class="price-period">per bulan / toko</div>
+        <ul class="price-feats">
+          <li><i class="ti ti-check"></i> 5 Kasir</li>
+          <li><i class="ti ti-check"></i> Produk tak terbatas</li>
+          <li><i class="ti ti-check"></i> Laporan lengkap + export</li>
+          <li><i class="ti ti-check"></i> Multi cabang</li>
+          <li><i class="ti ti-check"></i> Backup cloud 1 tahun</li>
+          <li><i class="ti ti-check"></i> Dukungan prioritas</li>
+        </ul>
+        <a href="https://kasirpintar.id/pro" class="price-btn price-btn-white">Coba 14 Hari Gratis</a>
+      </div>
+      <!-- Enterprise -->
+      <div class="price-card reveal">
+        <div class="price-badge">Untuk Bisnis Besar</div>
+        <div class="price-name">Enterprise</div>
+        <div class="price-num">Custom</div>
+        <div class="price-period">Hubungi tim kami</div>
+        <ul class="price-feats">
+          <li><i class="ti ti-check"></i> Kasir tak terbatas</li>
+          <li><i class="ti ti-check"></i> API & integrasi custom</li>
+          <li><i class="ti ti-check"></i> Dedicated server</li>
+          <li><i class="ti ti-check"></i> Onboarding & training</li>
+          <li><i class="ti ti-check"></i> SLA & support 24/7</li>
+        </ul>
+        <a href="mailto:sales@kasirpintar.id" class="price-btn price-btn-outline">Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-header-center reveal">
+      <div class="section-eyebrow">Pertanyaan Umum</div>
+      <h2>Ada yang ingin ditanyakan?</h2>
+    </div>
+    <div class="faq-grid" style="margin-top:48px;">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apa itu Kasir Pintar? <i class="ti ti-plus"></i>
+        </button>
+        <div class="faq-a">Kasir Pintar adalah aplikasi POS (Point of Sale) Android untuk membantu UMKM mengelola transaksi, stok barang, dan laporan penjualan secara digital dan otomatis.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah bisa digunakan tanpa internet? <i class="ti ti-plus"></i>
+        </button>
+        <div class="faq-a">Ya! Kasir Pintar berfungsi penuh dalam mode offline. Semua transaksi tersimpan lokal dan otomatis tersinkron saat koneksi internet tersedia kembali.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Berapa Android minimum yang dibutuhkan? <i class="ti ti-plus"></i>
+        </button>
+        <div class="faq-a">Kasir Pintar berjalan di Android 6.0 (Marshmallow) ke atas. Aplikasi dirancang ringan sehingga cocok untuk HP dengan spesifikasi rendah sekalipun.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah data saya aman? <i class="ti ti-plus"></i>
+        </button>
+        <div class="faq-a">Sangat aman. Data dienkripsi end-to-end dan disimpan di server cloud yang bersertifikasi ISO 27001. Kami tidak pernah menjual data pengguna kepada pihak ketiga.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Bisakah digunakan untuk banyak toko? <i class="ti ti-plus"></i>
+        </button>
+        <div class="faq-a">Bisa! Paket Pro mendukung multi-cabang. Anda bisa memantau laporan dari semua toko dalam satu dashboard yang terintegrasi.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah ada dukungan pelanggan? <i class="ti ti-plus"></i>
+        </button>
+        <div class="faq-a">Tersedia dukungan via WhatsApp, email, dan live chat. Pengguna Pro mendapatkan prioritas respons dalam 2 jam kerja.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section id="cta">
+  <div class="section-inner">
+    <div class="cta-box reveal">
+      <div class="cta-deco cta-deco-1"></div>
+      <div class="cta-deco cta-deco-2"></div>
+      <h2>Siap tingkatkan bisnis Anda?</h2>
+      <p>Bergabung dengan 50.000+ pemilik usaha yang sudah mempercayai Kasir Pintar.</p>
+      <div class="cta-actions">
+        <a href="https://kasirpintar.id/download" class="btn-cta-white">
+          <i class="ti ti-brand-android"></i> Download APK Gratis
+        </a>
+        <a href="https://kasirpintar.id/demo" class="btn-cta-ghost">
+          <i class="ti ti-player-play"></i> Lihat Demo Live
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <div class="footer-logo-icon"><i class="ti ti-cash-register"></i></div>
+          Kasir Pintar
+        </a>
+        <p class="footer-desc">Solusi kasir digital modern untuk UMKM dan bisnis ritel Indonesia.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" class="footer-social" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" class="footer-social" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+          <a href="#" class="footer-social" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Produk</div>
+        <ul>
+          <li><a href="#fitur">Fitur</a></li>
+          <li><a href="#harga">Harga</a></li>
+          <li><a href="#demo">Demo</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Perusahaan</div>
+        <ul>
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Karir</a></li>
+          <li><a href="#">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Bantuan</div>
+        <ul>
+          <li><a href="#">Dokumentasi</a></li>
+          <li><a href="#">Tutorial</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kasir Pintar — Aplikasi Kasir Android untuk UMKM Indonesia</span>
+      <span style="display:flex;align-items:center;gap:6px;"><i class="ti ti-map-pin" style="font-size:14px;color:#0EA46A;"></i> Made with ❤️ in Indonesia</span>
+    </div>
+  </div>
 </footer>
 
+<script>
+  /* ── scroll reveal ── */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        const delay = (Array.from(e.target.parentElement.children).indexOf(e.target)) * 60;
+        setTimeout(() => e.target.classList.add('visible'), Math.min(delay, 300));
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ── faq toggle ── */
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  /* ── mobile nav ── */
+  function openMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.add('open');
+    nav.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.remove('open');
+    nav.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  /* ── smooth nav highlight ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) cur = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--emerald)' : '';
+    });
+  });
+</script>
 </body>
 </html>

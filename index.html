@@ -1100,7 +1100,7 @@
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Toko Pintar</span>
-  <p>© 2026 Toko Pintar. Solusi POS &amp; Inventaris untuk Bisnis Retail Indonesia.</p>
+  <p>© 2025 Toko Pintar. Solusi POS &amp; Inventaris untuk Bisnis Retail Indonesia.</p>
 </footer>
 
 <!-- WhatsApp Float Button -->
@@ -1206,6 +1206,62 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
+
+  // Screenshot Slider
+  (function(){
+    const track = document.getElementById('slidesTrack');
+    if (!track) return;
+    const slides = track.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const labels = document.querySelectorAll('.slide-label');
+    const prev = document.getElementById('prevBtn');
+    const next = document.getElementById('nextBtn');
+    let current = 0;
+    let timer;
+
+    const slideTo = (idx, dir) => {
+      dir = dir === undefined ? 1 : dir;
+      slides[current].style.opacity = '0';
+      slides[current].style.transform = dir >= 0 ? 'translateX(-40px) scale(0.97)' : 'translateX(40px) scale(0.97)';
+      slides[current].style.pointerEvents = 'none';
+      slides[current].style.position = 'absolute';
+      const prev_idx = current;
+      setTimeout(() => {
+        slides[prev_idx].classList.remove('active');
+        slides[prev_idx].style.cssText = '';
+      }, 480);
+      current = ((idx % slides.length) + slides.length) % slides.length;
+      slides[current].style.opacity = '0';
+      slides[current].style.transform = dir >= 0 ? 'translateX(40px) scale(0.97)' : 'translateX(-40px) scale(0.97)';
+      slides[current].style.position = 'relative';
+      slides[current].classList.add('active');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          slides[current].style.transition = 'opacity 0.48s ease, transform 0.48s ease';
+          slides[current].style.opacity = '1';
+          slides[current].style.transform = 'translateX(0) scale(1)';
+        });
+      });
+      setTimeout(() => { slides[current].style.cssText = ''; }, 520);
+      dots.forEach((d,i) => { d.classList.toggle('active', i===current); d.setAttribute('aria-selected', i===current ? 'true' : 'false'); });
+      labels.forEach((l,i) => l.classList.toggle('active', i===current));
+    };
+
+    dots.forEach((d,i) => d.addEventListener('click', () => { clearInterval(timer); slideTo(i); resetTimer(); }));
+    labels.forEach((l,i) => l.addEventListener('click', () => { clearInterval(timer); slideTo(i); resetTimer(); }));
+    if(prev) prev.addEventListener('click', () => { clearInterval(timer); slideTo(current-1,-1); resetTimer(); });
+    if(next) next.addEventListener('click', () => { clearInterval(timer); slideTo(current+1,1); resetTimer(); });
+
+    let sx = 0;
+    track.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchend', function(e){
+      const dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 40) { clearInterval(timer); slideTo(dx < 0 ? current+1 : current-1, dx < 0 ? 1 : -1); resetTimer(); }
+    }, {passive:true});
+
+    function resetTimer(){ timer = setInterval(function(){ slideTo(current+1,1); }, 4200); }
+    resetTimer();
+  })();
 </script>
 </body>
 </html>

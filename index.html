@@ -18,18 +18,18 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --navy: #0A1628;
-    --navy-2: #0F2040;
-    --navy-3: #162B50;
-    --cyan: #00D4FF;
-    --cyan-dim: rgba(0,212,255,0.15);
+    --navy: #0A1F1E;
+    --navy-2: #0F2B2A;
+    --navy-3: #163834;
+    --primary: #0D9488;
+    --primary-dim: rgba(13,148,136,0.15);
     --amber: #F59E0B;
     --amber-dim: rgba(245,158,11,0.12);
-    --off-white: #F0F4FF;
+    --off-white: #F0FDF9;
     --slate: #94A3B8;
     --slate-light: #CBD5E1;
     --white: #FFFFFF;
-    --green: #10B981;
+    --green: #0D9488;
     --surface: rgba(255,255,255,0.04);
     --border: rgba(255,255,255,0.08);
     --border-light: rgba(0,0,0,0.08);
@@ -49,7 +49,7 @@
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(10,22,40,0.92);
+    background: rgba(10,31,30,0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
@@ -67,7 +67,7 @@
   }
   .nav-logo-dot {
     width: 8px; height: 8px; border-radius: 50%;
-    background: var(--cyan);
+    background: var(--primary);
     animation: pulse-dot 2s ease-in-out infinite;
   }
   @keyframes pulse-dot {
@@ -75,7 +75,7 @@
     50% { opacity: 0.5; transform: scale(1.4); }
   }
   .nav-cta {
-    background: var(--cyan);
+    background: var(--primary);
     color: var(--navy);
     font-family: 'Inter', sans-serif;
     font-weight: 600;
@@ -101,15 +101,15 @@
   .hero-bg-grid {
     position: absolute; inset: 0; z-index: 0;
     background-image:
-      linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(13,148,136,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13,148,136,0.04) 1px, transparent 1px);
     background-size: 40px 40px;
   }
   .hero-glow {
     position: absolute;
     width: 500px; height: 500px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(13,148,136,0.08) 0%, transparent 70%);
     top: 50%; left: 50%;
     transform: translate(-50%, -60%);
     z-index: 0;
@@ -120,12 +120,12 @@
   .hero-badge {
     display: inline-flex; align-items: center; gap: 0.4rem;
     background: var(--cyan-dim);
-    border: 1px solid rgba(0,212,255,0.25);
+    border: 1px solid rgba(13,148,136,0.25);
     border-radius: 100px;
     padding: 0.3rem 0.8rem;
     font-size: 0.72rem;
     font-weight: 600;
-    color: var(--cyan);
+    color: var(--primary);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
@@ -143,7 +143,7 @@
     opacity: 0;
     animation: fade-up 0.7s 0.35s ease forwards;
   }
-  .hero h1 .accent { color: var(--cyan); }
+  .hero h1 .accent { color: var(--primary); }
 
   .hero-sub {
     font-size: clamp(0.95rem, 3vw, 1.1rem);
@@ -161,7 +161,7 @@
   }
   .btn-primary {
     display: inline-block;
-    background: var(--cyan);
+    background: var(--primary);
     color: var(--navy);
     font-weight: 700;
     font-size: 0.95rem;
@@ -173,7 +173,7 @@
     max-width: 280px;
     text-align: center;
   }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,212,255,0.25); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(13,148,136,0.3); }
 
   .btn-secondary {
     display: inline-block;
@@ -195,7 +195,7 @@
   }
   .pulse-ring {
     position: absolute; inset: 0; border-radius: 50%;
-    border: 1.5px solid var(--cyan);
+    border: 1.5px solid var(--primary);
     opacity: 0;
     animation: ring-expand 2.4s ease-out infinite;
   }
@@ -209,7 +209,7 @@
     position: absolute; inset: 20px;
     background: var(--navy-3);
     border-radius: 50%;
-    border: 1.5px solid rgba(0,212,255,0.4);
+    border: 1.5px solid rgba(13,148,136,0.4);
     display: flex; align-items: center; justify-content: center;
   }
   .pulse-icon {
@@ -250,7 +250,7 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--cyan);
+    color: var(--primary);
     margin-bottom: 0.6rem;
   }
   .section-eyebrow.amber { color: var(--amber); }
@@ -295,7 +295,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: var(--cyan);
+    background: var(--primary);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.35s ease;
@@ -311,7 +311,7 @@
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.12em;
-    color: rgba(0,212,255,0.5);
+    color: rgba(13,148,136,0.5);
     margin-bottom: 0.5rem;
   }
 
@@ -325,7 +325,7 @@
   }
   .pillar-icon.amber { background: var(--amber-dim); }
   .pillar-icon.green { background: rgba(16,185,129,0.1); }
-  .pillar-icon.purple { background: rgba(139,92,246,0.1); }
+  .pillar-icon.purple { background: rgba(13,148,136,0.12); }
 
   .pillar-card h3 {
     font-family: 'Syne', sans-serif;
@@ -453,7 +453,7 @@
   }
   .sync-fill {
     height: 100%;
-    background: var(--cyan);
+    background: var(--primary);
     border-radius: 2px;
     animation: sync-progress 3s ease-in-out infinite;
   }
@@ -482,7 +482,7 @@
     font-family: 'Syne', sans-serif;
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--cyan);
+    color: var(--primary);
     display: block;
   }
   .trust-card .lbl {
@@ -504,7 +504,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(0,212,255,0.07) 0%, transparent 65%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(13,148,136,0.07) 0%, transparent 65%);
     pointer-events: none;
   }
   .cta-section h2 {
@@ -525,7 +525,7 @@
   }
   .btn-cta-big {
     display: inline-block;
-    background: var(--cyan);
+    background: var(--primary);
     color: var(--navy);
     font-weight: 700;
     font-size: 1rem;
@@ -538,7 +538,7 @@
     max-width: 320px;
     text-align: center;
   }
-  .btn-cta-big:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,212,255,0.3); }
+  .btn-cta-big:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(13,148,136,0.35); }
 
   .cta-note {
     font-size: 0.75rem;
@@ -633,7 +633,7 @@
     <span class="nav-logo-dot" aria-hidden="true"></span>
     Toko Pintar
   </a>
-  <a href="#mulai" class="nav-cta">Coba Gratis</a>
+  <a href="https://drive.google.com/file/d/1imlq_4rNRbD3QxI77u49p0MWkD8dn15S/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="nav-cta">Coba Gratis</a>
 </nav>
 
 <!-- HERO -->
@@ -663,7 +663,7 @@
     </p>
 
     <div class="hero-actions">
-      <a href="#mulai" class="btn-primary">Coba Gratis Sekarang</a>
+      <a href="https://drive.google.com/file/d/1imlq_4rNRbD3QxI77u49p0MWkD8dn15S/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="btn-primary">Coba Gratis Sekarang</a>
       <a href="#pilar" class="btn-secondary">Lihat fitur unggulan ↓</a>
     </div>
 
@@ -846,8 +846,8 @@
   <p class="reveal reveal-delay-1">
     Bergabunglah dengan ribuan pemilik bisnis yang telah membebaskan operasional harian mereka dari ketergantungan internet. Gratis untuk dicoba.
   </p>
-  <a href="#" class="btn-cta-big reveal reveal-delay-2" aria-label="Mulai coba gratis Toko Pintar sekarang">
-    Mulai Coba Gratis — Tanpa Kartu Kredit
+  <a href="https://drive.google.com/file/d/1imlq_4rNRbD3QxI77u49p0MWkD8dn15S/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="btn-cta-big reveal reveal-delay-2" aria-label="Mulai coba gratis Toko Pintar sekarang">
+    ⬇ Download Toko Pintar Sekarang
   </a>
   <p class="cta-note reveal reveal-delay-3">
     Setup &lt; 5 menit · Tidak perlu perangkat keras khusus · Dukungan Bahasa Indonesia
@@ -857,7 +857,7 @@
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Toko Pintar</span>
-  <p>© 2025 Toko Pintar. Solusi POS &amp; Inventaris untuk Bisnis Retail Indonesia.</p>
+  <p>© 2026 Toko Pintar. Solusi POS &amp; Inventaris untuk Bisnis Retail Indonesia.</p>
 </footer>
 
 <script>
